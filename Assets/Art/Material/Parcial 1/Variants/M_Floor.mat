@@ -25,11 +25,13 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _IceInensity: -0.62
-    - _IceOpacity: 0.658
-    - _IceRefraction: 0.18
+    - _IceInensity: -0.5
+    - _IceOpacity: 0.5
+    - _IceRefraction: 0.1
     m_Colors:
-    - _IceColor: {r: 1, g: 0.9858491, b: 0.98735267, a: 0}
+    - _IceColor: {r: 0.6179246, g: 0.9454178, b: 1, a: 0}
+    - _IceOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _IceTiling: {r: 20, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3002562059374947359
 MonoBehaviour:
