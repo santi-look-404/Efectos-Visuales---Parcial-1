@@ -14,6 +14,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         transform.position += _moveSpeed * (Input.GetAxisRaw("Vertical") * transform.forward + Input.GetAxisRaw("Horizontal") * transform.right);
 
         transform.eulerAngles += new Vector3(-_yAxisSpeed * Input.GetAxis("Mouse Y"), _xAxisSpeed * Input.GetAxis("Mouse X"), 0.0f);
