@@ -7,6 +7,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float _xAxisSpeed = 2;
     [SerializeField] private float _yAxisSpeed = 2;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     void Update()
     {
         transform.position += _moveSpeed * (Input.GetAxisRaw("Vertical") * transform.forward + Input.GetAxisRaw("Horizontal") * transform.right);
