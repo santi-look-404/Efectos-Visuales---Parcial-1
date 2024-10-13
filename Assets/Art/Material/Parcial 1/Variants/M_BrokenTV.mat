@@ -26,6 +26,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BorderIntensity: 0.31
+    - _IsOn: 1
     - _LinesFrequency: 34.9
     - _LinesTimeScale: 11.1
     m_Colors:
