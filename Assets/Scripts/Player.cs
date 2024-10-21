@@ -30,6 +30,11 @@ public class Player : MonoBehaviour
             Interact();
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            EagleVisionManager.Instance.ToggleEagleVision();
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
