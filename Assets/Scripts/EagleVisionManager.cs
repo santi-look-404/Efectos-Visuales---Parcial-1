@@ -27,6 +27,11 @@ public class EagleVisionManager : MonoBehaviour
         SetEagleVisionIsOn(false);
     }
 
+    private void OnApplicationQuit()
+    {
+        _backgroundColorEffect.RevertAllPropertyOverrides();
+    }
+
     public void ToggleEagleVision()
     {
         _isOn = !_isOn;
