@@ -25,12 +25,12 @@ public class Player : MonoBehaviour
 
         RotateCamera(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"));
 
-        if (CanInteract() && Input.GetKeyDown(KeyCode.Space))
+        if (CanInteract() && Input.GetKeyDown(KeyCode.LeftShift))
         {
             Interact();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
         {
             EagleVisionManager.Instance.ToggleEagleVision();
         }
