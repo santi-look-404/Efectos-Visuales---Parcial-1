@@ -39,7 +39,7 @@ Material:
     m_Floats:
     - _DepthLine: 1
     - _DepthLineBias: 1
-    - _MinDepthDistance: 0.5
+    - _MinDepthDistance: 0
     m_Colors:
     - _EdgeColor: {r: 1, g: 0.06769224, b: 0, a: 0}
   m_BuildTextureStacks: []

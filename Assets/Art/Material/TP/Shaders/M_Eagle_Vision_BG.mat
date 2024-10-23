@@ -37,7 +37,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BlurDensity: 1000
+    - _BlurMaskSize: 1
+    - _BlurMaskSmoothness: 0.07
+    - _ColorSaturation: 0
+    - _IsOn: 0
     - _Saturation: 1
+    - _VignetteIntensity: 1
     m_Colors:
+    - _ColorTint: {r: 0, g: 0.1510782, b: 0.1792453, a: 1}
     - _Tint: {r: 0.0124154445, g: 0.25002295, b: 0.2924528, a: 1}
   m_BuildTextureStacks: []
