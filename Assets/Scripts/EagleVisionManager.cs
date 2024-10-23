@@ -40,15 +40,19 @@ public class EagleVisionManager : MonoBehaviour
         ChangeEagleVisionRate();
     }
 
+    /*
     private void OnApplicationQuit()
     {
         Material[] materials = new Material[] { _backgroundColorEffect, _borderColorEffect };
+        
+        if (!Application.isEditor) return;
 
         foreach (Material material in materials)
         {
             material.RevertAllPropertyOverrides();
         }
     }
+    */
 
     public void ToggleEagleVision()
     {
