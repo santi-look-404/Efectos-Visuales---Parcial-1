@@ -1,13 +1,24 @@
+using System.Collections;
 using UnityEngine;
 
 public class EagleVisionManager : MonoBehaviour
 {
+    [Header("Background")]
+    [SerializeField] private string _backgroundColorEffectIsOnName = "_IsOn";
     [SerializeField] private Material _backgroundColorEffect;
+
+    [Header("Outlines")]
+    [SerializeField] private string _borderColorEffectMinDepthDistanceName = "_MinDepthDistance";
     [SerializeField] private Material _borderColorEffect;
+
+    [Header("Transition Speed")]
+    [SerializeField] private float _transitionSpeed = 3.0f;
 
     public static EagleVisionManager Instance;
 
     bool _isOn = false;
+    Coroutine _transitionCoroutine = null;
+    float _transition = 0;
 
     private void Awake()
     {
@@ -25,7 +36,7 @@ public class EagleVisionManager : MonoBehaviour
 
     private void Start()
     {
-        SetEagleVisionIsOn(false);
+        ChangeEagleVisionRate();
     }
 
     private void OnApplicationQuit()
@@ -42,13 +53,27 @@ public class EagleVisionManager : MonoBehaviour
     {
         _isOn = !_isOn;
 
-        SetEagleVisionIsOn(_isOn);
+        _transitionCoroutine ??= StartCoroutine(ToggleBackground());
     }
 
-    private void SetEagleVisionIsOn(bool isOn)
+    private IEnumerator ToggleBackground()
     {
-        _backgroundColorEffect.SetFloat("_IsOn", isOn ? 1 : 0);
+        while (_transition >= 0 && _transition <= 1)
+        {
+            _transition = Mathf.Clamp(_transition + (_isOn ? 1 : -1) * Time.deltaTime * _transitionSpeed, 0, 1);
 
-        _borderColorEffect.SetFloat("_MinDepthDistance", isOn ? 0.5f : 0);
+            ChangeEagleVisionRate();
+
+            yield return null;
+        }
+
+        _transitionCoroutine = null;
+    }
+
+    private void ChangeEagleVisionRate()
+    {
+        _backgroundColorEffect.SetFloat(_backgroundColorEffectIsOnName, _transition);
+
+        _borderColorEffect.SetFloat(_borderColorEffectMinDepthDistanceName, _transition);
     }
 }
