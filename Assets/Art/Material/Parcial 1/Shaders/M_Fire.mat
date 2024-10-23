@@ -41,6 +41,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Distance: 1
+    - _Fallof: 1
     - _FireIntensity: 1
     - _FireSpread: 0.1
     - _QueueControl: 0
