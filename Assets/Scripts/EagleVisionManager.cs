@@ -3,6 +3,7 @@ using UnityEngine;
 public class EagleVisionManager : MonoBehaviour
 {
     [SerializeField] private Material _backgroundColorEffect;
+    [SerializeField] private Material _borderColorEffect;
 
     public static EagleVisionManager Instance;
 
@@ -29,7 +30,12 @@ public class EagleVisionManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        _backgroundColorEffect.RevertAllPropertyOverrides();
+        Material[] materials = new Material[] { _backgroundColorEffect, _borderColorEffect };
+
+        foreach (Material material in materials)
+        {
+            material.RevertAllPropertyOverrides();
+        }
     }
 
     public void ToggleEagleVision()
@@ -42,5 +48,7 @@ public class EagleVisionManager : MonoBehaviour
     private void SetEagleVisionIsOn(bool isOn)
     {
         _backgroundColorEffect.SetFloat("_IsOn", isOn ? 1 : 0);
+
+        _borderColorEffect.SetFloat("_MinDepthDistance", isOn ? 0.5f : 0);
     }
 }
