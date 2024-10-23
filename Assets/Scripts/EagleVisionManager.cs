@@ -5,6 +5,7 @@ public class EagleVisionManager : MonoBehaviour
 {
     [Header("Background")]
     [SerializeField] private string _backgroundColorEffectIsOnName = "_IsOn";
+    [SerializeField] private string _backgroundColorEffectBlurMaskSizeName = "_BlurMaskSize";
     [SerializeField] private Material _backgroundColorEffect;
 
     [Header("Outlines")]
@@ -74,6 +75,10 @@ public class EagleVisionManager : MonoBehaviour
     {
         _backgroundColorEffect.SetFloat(_backgroundColorEffectIsOnName, _transition);
 
+        _backgroundColorEffect.SetFloat(_backgroundColorEffectBlurMaskSizeName, _transition);
+
         _borderColorEffect.SetFloat(_borderColorEffectMinDepthDistanceName, _transition);
+
+        GhostManager.Instance.ToggleGhosts(_transition);
     }
 }

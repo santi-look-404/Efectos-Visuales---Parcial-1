@@ -41,6 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _IceInensity: 0.5
     - _IceOpacity: 0.2
     - _IceRefraction: 0.5
@@ -48,6 +49,8 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _IceColor: {r: 0.3495016, g: 0.9566109, b: 0.9622642, a: 0}
+    - _IceOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _IceTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8074885417980892954
 MonoBehaviour:
