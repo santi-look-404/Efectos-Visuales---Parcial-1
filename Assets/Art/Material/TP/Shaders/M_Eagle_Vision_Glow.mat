@@ -37,8 +37,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthLine: 4
+    - _DepthLine: 1
     - _DepthLineBias: 1
+    - _MinDepthDistance: 0.5
     m_Colors:
     - _EdgeColor: {r: 1, g: 0.06769224, b: 0, a: 0}
   m_BuildTextureStacks: []
