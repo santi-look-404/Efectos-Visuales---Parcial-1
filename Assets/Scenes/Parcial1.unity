@@ -1803,6 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backgroundColorEffectIsOnName: _IsOn
+  _backgroundColorEffectBlurMaskSizeName: _BlurMaskSize
   _backgroundColorEffect: {fileID: 2100000, guid: 5bb87dbe0ca9fac42a086e3c387582fd, type: 2}
   _borderColorEffectMinDepthDistanceName: _MinDepthDistance
   _borderColorEffect: {fileID: 2100000, guid: efe5a1d3265c627428badb4cbaed1b0e, type: 2}
