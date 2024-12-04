@@ -18,6 +18,8 @@ public class ShieldShader : MonoBehaviour
     void Update()
     {
         LookAtCamera();
+
+        Zoom();
     }
 
     private void LookAtCamera()

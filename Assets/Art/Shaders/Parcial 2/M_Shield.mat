@@ -11,13 +11,15 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: c8ed7c8f0fc9f174189c5259098dfa44, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -37,25 +39,40 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelDepthOffset: 0.36
-    - _FresnelPower: 3
-    - _QueueControl: 0
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _CastShadows: 1
+    - _Cull: 2
+    - _DissolveEdgeThickness: 0.07
+    - _DissolveValue: 0.092
+    - _DstBlend: 0
+    - _FresnelDepthOffset: 0.4
+    - _FresnelPower: 4.34
+    - _QueueControl: 1
     - _QueueOffset: 0
-    - _TwirlDistortionStrength: 0.5
+    - _ReceiveShadows: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _TwirlDistortionStrength: 2.6
     - _VertexDisplacementSphereMaskHardness: 0
-    - _VertexDisplacementSphereMaskRadius: 0
+    - _VertexDisplacementSphereMaskRadius: -0.3
     - _VertexDisplacementStrength: 0
-    - _ZoomSphereMaskHardness: 0.64
-    - _ZoomSphereMaskRadius: 0.7
-    - _ZoomValue: 0.1
+    - _WorkflowMode: 1
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
+    - _ZoomSphereMaskHardness: 0.45
+    - _ZoomSphereMaskRadius: 0.17
     m_Colors:
-    - _FresnselColor: {r: 0, g: 0.18450472, b: 0.8018868, a: 1}
+    - _DissolveColor: {r: 0.37450984, g: 0, b: 0.052431326, a: 1}
+    - _FresnselColor: {r: 0, g: 0.61124074, b: 2.6701567, a: 1}
     - _HitPosition: {r: 0, g: 0, b: 0, a: 0}
     - _TwirlDistortionMask: {r: 0.56, g: 2.3, b: 0, a: 0}
-    - _ZoomHitPosition: {r: 1, g: 1, b: 0, a: 0}
     - _ZoomObjectScreenPosition: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6018978083335207405
+--- !u!114 &5889930817320111492
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
