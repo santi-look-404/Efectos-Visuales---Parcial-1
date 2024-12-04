@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -17,7 +18,11 @@ public class ShieldShader : MonoBehaviour
     [SerializeField] float _displacementMagnitude;
     [SerializeField] float _displacementLerpSpeed;
 
-    bool _shieldOn;
+    [Header("Damage")]
+    [SerializeField] float _maxDamage = 100;
+    [SerializeField][ColorUsage(true, true)] Color[] _highestDamageColor;
+
+    public bool _shieldOn;
     Camera _camera;
     Coroutine _disolveCoroutine;
     Renderer _renderer;
@@ -35,9 +40,9 @@ public class ShieldShader : MonoBehaviour
 
         Zoom();
 
-        CheckToggleShield();
+        // CheckToggleShield();
 
-        CheckClickOnShield();
+        // CheckClickOnShield();
     }
 
     private void LookAtCamera()
@@ -77,7 +82,7 @@ public class ShieldShader : MonoBehaviour
         }
     }
 
-    private void ActivateShield()
+    public void ActivateShield()
     {
         float target = 1;
 

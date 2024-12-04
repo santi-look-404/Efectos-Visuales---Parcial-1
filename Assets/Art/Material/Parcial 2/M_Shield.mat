@@ -13,14 +13,16 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
   stringTagMap:
-    RenderType: TransparentCutout
-  disabledShaderPasses: []
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -40,36 +42,36 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 1
-    - _AlphaToMask: 1
+    - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _CastShadows: 1
     - _Cull: 2
-    - _DissolveEdgeThickness: 0.07
-    - _DissolveValue: 0
-    - _DstBlend: 0
-    - _FresnelDepthOffset: 0.4
-    - _FresnelPower: 5.16
+    - _DissolveEdgeThickness: -0.65
+    - _DissolveValue: 1
+    - _DstBlend: 10
+    - _FresnelDepthOffset: 86.09
+    - _FresnelPower: 5.37
     - _QueueControl: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _TwirlDistortionStrength: 7.11
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _TwirlDistortionStrength: 3.17
     - _VertexDisplacementSphereMaskHardness: 0
     - _VertexDisplacementSphereMaskRadius: -0.3
-    - _VertexDisplacementStrength: -1.43
+    - _VertexDisplacementStrength: 100
     - _WorkflowMode: 1
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - _ZWriteControl: 0
     - _ZoomSphereMaskHardness: 0.45
-    - _ZoomSphereMaskRadius: 0.17
+    - _ZoomSphereMaskRadius: 2.08
     m_Colors:
-    - _DissolveColor: {r: 0.37450984, g: 0, b: 0.052431326, a: 1}
-    - _FresnselColor: {r: 0, g: 0.61124074, b: 2.6701567, a: 1}
+    - _DissolveColor: {r: 0.37450984, g: 0, b: 0.052431326, a: 0}
+    - _FresnselColor: {r: 397.33762, g: 246.33963, b: 1024.0001, a: 0}
     - _HitPosition: {r: 0, g: 1, b: 0, a: 0}
-    - _TwirlDistortionMask: {r: 0.56, g: 2.3, b: 0, a: 0}
+    - _TwirlDistortionMask: {r: 0.4, g: 4.3, b: 0, a: 0}
     - _ZoomObjectScreenPosition: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5889930817320111492
