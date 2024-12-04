@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class FireBullet : MonoBehaviour
@@ -52,5 +53,12 @@ public class FireBullet : MonoBehaviour
         hit.transform.forward = _hitNormal;
 
         Destroy(gameObject);
+    }
+
+    public void Configure(FPSPlayer fpsPlayer)
+    {
+        transform.forward = fpsPlayer.transform.forward;
+
+        transform.SetParent(null);
     }
 }
