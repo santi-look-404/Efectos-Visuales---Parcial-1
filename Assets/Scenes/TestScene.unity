@@ -270,7 +270,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402045405}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -5791,7 +5791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &851472340
 Transform:
   m_ObjectHideFlags: 0
@@ -5815,7 +5815,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851472339}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -10923,7 +10923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1328078118
 Transform:
   m_ObjectHideFlags: 0
@@ -11058,6 +11058,7 @@ GameObject:
   - component: {fileID: 1420566889}
   - component: {fileID: 1420566888}
   - component: {fileID: 1420566887}
+  - component: {fileID: 1420566891}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -11151,6 +11152,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 775158050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1420566891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420566886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa07f5c987e55d4c9f394c01a0b9fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disolvePropertyName: _DissolveValue
+  _zoomObjectScreenPositionPropertyName: _ZoomObjectScreenPosition
+  _disolveSpeed: 0.5
 --- !u!1 &1547091943
 GameObject:
   m_ObjectHideFlags: 0
@@ -11324,7 +11340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1678361499
 Transform:
   m_ObjectHideFlags: 0
