@@ -42,11 +42,15 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TwirlDistortionStrength: 0.5
+    - _VertexDisplacementSphereMaskHardness: 0
+    - _VertexDisplacementSphereMaskRadius: 0
+    - _VertexDisplacementStrength: 0
     - _ZoomSphereMaskHardness: 0.64
     - _ZoomSphereMaskRadius: 0.7
     - _ZoomValue: 0.1
     m_Colors:
-    - _FresnselColor: {r: 0.1058206, g: 0.206612, b: 0.5471698, a: 1}
+    - _FresnselColor: {r: 0, g: 0.18450472, b: 0.8018868, a: 1}
+    - _HitPosition: {r: 0, g: 0, b: 0, a: 0}
     - _TwirlDistortionMask: {r: 0.56, g: 2.3, b: 0, a: 0}
     - _ZoomHitPosition: {r: 1, g: 1, b: 0, a: 0}
     - _ZoomObjectScreenPosition: {r: 0, g: 0, b: 0, a: 0}
