@@ -1,10 +1,16 @@
-using System;
 using UnityEngine;
 
 public class FireBullet : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField] float _speed;
     [SerializeField] GameObject _HitEffect;
+
+    [Header("Materials")]
+    [SerializeField] Renderer _sphereMaterial;
+
+    [Header("Aesthetics")]
+    [SerializeField][ColorUsage(true, true)] Color[] _possibleColors;
 
     Ray ray;
     RaycastHit hit;
@@ -13,6 +19,8 @@ public class FireBullet : MonoBehaviour
 
     private void Start()
     {
+        _sphereMaterial.material.SetColor("_Color", _possibleColors[Random.Range(0, _possibleColors.Length)]);
+
         Destroy(gameObject, 3);
     }
 

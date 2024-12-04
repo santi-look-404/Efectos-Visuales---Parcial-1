@@ -9973,3 +9973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _HitEffect: {fileID: 4595489905088971820, guid: f0d065e0166c8854fa3ac391c88cf4a2, type: 3}
+  _sphereMaterial: {fileID: 3043586056668841219}
+  _possibleColors:
+  - {r: 2.2844427, g: 5.207547, b: 2.342771, a: 1}
+  - {r: 1.2171726, g: 0.572549, b: 1.3019608, a: 1}
+  - {r: 0.29764464, g: 1.462289, b: 1.7054232, a: 1}
