@@ -3,12 +3,19 @@ using UnityEngine;
 
 public class ShieldShader : MonoBehaviour
 {
-    [Header("Key")]
+    [Header("Keys")]
     [SerializeField] string _disolvePropertyName = "_DissolveValue";
     [SerializeField] string _zoomObjectScreenPositionPropertyName = "_ZoomObjectScreenPosition";
+    [SerializeField] string _vertexDisplacementPropertyName = "_VertexDisplacementStrength";
+    [SerializeField] string _hitPositionPropertyName = "_HitPosition";
 
     [Header("Disolve")]
     [SerializeField] float _disolveSpeed;
+
+    [Header("Hits")]
+    [SerializeField] AnimationCurve _displacementCurve;
+    [SerializeField] float _displacementMagnitude;
+    [SerializeField] float _displacementLerpSpeed;
 
     bool _shieldOn;
     Camera _camera;
@@ -28,7 +35,9 @@ public class ShieldShader : MonoBehaviour
 
         Zoom();
 
-        ToggleShield();
+        CheckToggleShield();
+
+        CheckClickOnShield();
     }
 
     private void LookAtCamera()
@@ -45,11 +54,26 @@ public class ShieldShader : MonoBehaviour
         _renderer.material.SetVector(_zoomObjectScreenPositionPropertyName, zoom);
     }
 
-    private void ToggleShield()
+    private void CheckToggleShield()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ActivateShield();
+        }
+    }
+
+    private void CheckClickOnShield()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                HitShield(hit.point);
+            }
         }
     }
 
@@ -69,10 +93,19 @@ public class ShieldShader : MonoBehaviour
             StopCoroutine(_disolveCoroutine);
         }
 
-        _disolveCoroutine = StartCoroutine(Coroutine_DisolveShield(target));
+        _disolveCoroutine = StartCoroutine(DisolveShield(target));
     }
 
-    private IEnumerator Coroutine_DisolveShield(float target)
+    public void HitShield(Vector3 hitPosition)
+    {
+        _renderer.material.SetVector(_hitPositionPropertyName, hitPosition);
+
+        StopAllCoroutines();
+
+        StartCoroutine(HitDisplacement());
+    }
+
+    private IEnumerator DisolveShield(float target)
     {
         float start = _renderer.material.GetFloat(_disolvePropertyName);
 
@@ -84,6 +117,20 @@ public class ShieldShader : MonoBehaviour
 
             lerp += Time.deltaTime * _disolveSpeed;
 
+            yield return null;
+        }
+    }
+
+    private IEnumerator HitDisplacement()
+    {
+        float lerp = 0;
+
+        while (lerp < 1)
+        {
+            _renderer.material.SetFloat(_vertexDisplacementPropertyName, _displacementCurve.Evaluate(lerp) * _displacementMagnitude);
+            
+            lerp += Time.deltaTime * _displacementLerpSpeed;
+            
             yield return null;
         }
     }

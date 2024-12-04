@@ -11166,7 +11166,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _disolvePropertyName: _DissolveValue
   _zoomObjectScreenPositionPropertyName: _ZoomObjectScreenPosition
+  _vertexDisplacementPropertyName: _VertexDisplacementStrength
+  _hitPositionPropertyName: _HitPosition
   _disolveSpeed: 0.5
+  _displacementCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.00373599
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.4582814
+      value: 0.44991514
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.996264
+      value: 1.0067911
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _displacementMagnitude: -0.3
+  _displacementLerpSpeed: 1
 --- !u!1 &1547091943
 GameObject:
   m_ObjectHideFlags: 0
